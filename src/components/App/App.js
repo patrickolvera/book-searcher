@@ -1,12 +1,12 @@
 /***********************************************
  * TODO:
  * -Search:
- *   -handle search input submit with an API request
  *   -loading animation during request
  * -Results:
  *   -create book components to be rendered
  *   -put books on the page
  *   -Link to more information
+ *    -perform volume request (https://developers.google.com/books/docs/v1/using#RetrievingVolume)
  * -Bonus:
  *   -handle errors with API requests
  *   -display error message to user when submiting non valid query
@@ -17,15 +17,23 @@
 
 import React, { Component } from "react";
 import SearchBox from "../SearchBox";
+import getBooks from "../../API";
 
 class App extends Component {
   state = {
-    query: ""
+    query: "",
+    books: []
   };
   handleSearchInput = event => {
     this.setState({
       query: event.target.value
     });
+  };
+  handleSearchSubmit = async event => {
+    event.preventDefault();
+    const books = await getBooks(this.state.query);
+    this.setState({ books });
+    console.log(this.state.books);
   };
   render() {
     return (
@@ -33,6 +41,7 @@ class App extends Component {
         <SearchBox
           query={this.state.query}
           handleSearchInput={this.handleSearchInput}
+          handleSearchSubmit={this.handleSearchSubmit}
         />
       </div>
     );

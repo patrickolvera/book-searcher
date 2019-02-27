@@ -23,14 +23,24 @@ const styles = theme => ({
 
 class SearchBox extends Component {
   render() {
-    const { classes, query, handleSearchInput } = this.props;
+    const {
+      classes,
+      query,
+      handleSearchInput,
+      handleSearchSubmit
+    } = this.props;
 
     return (
       <Fragment>
         <Typography className={classes.heading} variant="h3" gutterBottom>
           Book Searcher
         </Typography>
-        <form className={classes.container} noValidate autoComplete="off">
+        <form
+          className={classes.container}
+          onSubmit={handleSearchSubmit}
+          noValidate
+          autoComplete="off"
+        >
           <TextField
             id="search"
             label="Lets Find Some Books"
@@ -40,7 +50,7 @@ class SearchBox extends Component {
             value={query}
             onChange={handleSearchInput}
           />
-          <Button>Search</Button>
+          <Button type="submit">Search</Button>
         </form>
       </Fragment>
     );
