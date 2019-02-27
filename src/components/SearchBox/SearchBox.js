@@ -23,7 +23,7 @@ const styles = theme => ({
 
 class SearchBox extends Component {
   render() {
-    const { classes } = this.props;
+    const { classes, query, handleSearchInput } = this.props;
 
     return (
       <Fragment>
@@ -36,7 +36,9 @@ class SearchBox extends Component {
             label="Lets Find Some Books"
             type="search"
             className={classes.textField}
-            margin="auto"
+            margin="normal"
+            value={query}
+            onChange={handleSearchInput}
           />
           <Button>Search</Button>
         </form>
