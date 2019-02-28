@@ -58,7 +58,10 @@ class SearchBox extends Component {
 }
 
 SearchBox.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  query: PropTypes.string.isRequired,
+  handleSearchInput: PropTypes.func.isRequired,
+  handleSearchSubmit: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(SearchBox);

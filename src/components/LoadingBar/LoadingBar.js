@@ -41,7 +41,8 @@ class LoadingBar extends Component {
 }
 
 LoadingBar.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  loading: PropTypes.bool.isRequired
 };
 
 export default withStyles(styles)(LoadingBar);
