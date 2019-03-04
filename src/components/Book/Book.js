@@ -16,20 +16,18 @@ const bookSize = {
 
 const styles = theme => ({
   card: {
-    margin: 15,
     overflow: "hidden",
     textAlign: "left",
     height: 380,
-    width: 340,
+    margin: "auto auto 2rem auto",
+    width: "80%",
     [theme.breakpoints.up("sm")]: {
       margin: "auto auto 2rem auto",
-      width: "60%",
-      maxWidth: 420
+      width: "65%"
     },
     [theme.breakpoints.up("md")]: {
       margin: "auto auto 2rem auto",
-      width: "40%",
-      maxWidth: 390
+      width: "40%"
     }
   },
   media: {
@@ -42,7 +40,8 @@ const styles = theme => ({
     height: 320
   },
   h5: {
-    maxHeight: 170,
+    fontSize: "1.2rem",
+    maxHeight: 210,
     overflow: "hidden"
   },
   subHeadings: {
