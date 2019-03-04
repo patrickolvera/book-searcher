@@ -20,7 +20,7 @@ const styles = theme => ({
     textAlign: "left",
     height: 380,
     margin: "auto auto 2rem auto",
-    width: "80%",
+    width: "90%",
     [theme.breakpoints.up("sm")]: {
       margin: "auto auto 2rem auto",
       width: "65%"
@@ -32,17 +32,24 @@ const styles = theme => ({
   },
   media: {
     height: bookSize.height,
-    width: bookSize.width
+    width: bookSize.width,
+    [theme.breakpoints.up("xs")]: {
+      width: "44%",
+      height: "70%"
+    }
   },
   content: {
     float: "right",
-    width: "45%",
+    width: "40%",
     height: 320
   },
   h5: {
     fontSize: "1.2rem",
     maxHeight: 210,
-    overflow: "hidden"
+    overflow: "hidden",
+    [theme.breakpoints.up("xs")]: {
+      fontSize: "0.8rem"
+    }
   },
   subHeadings: {
     marginTop: "2rem"
