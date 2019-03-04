@@ -13,16 +13,11 @@ const styles = theme => ({
     flexDirection: "column",
     alignItems: "center",
     [theme.breakpoints.up("md")]: {
-      // backgroundColor: theme.palette.secondary.main,
       flexDirection: "row",
       flexWrap: "wrap",
       alignItems: "normal",
       maxWidth: 960
     }
-    // [theme.breakpoints.up("lg")]: {
-    //   // width: "75%",
-    //   backgroundColor: theme.palette.secondary.main
-    // }
   }
 });
 

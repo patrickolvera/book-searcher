@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from "react";
 import PropTypes from "prop-types";
-import classNames from "classnames";
 import { Typography, withStyles, TextField, Button } from "@material-ui/core";
 
 const styles = theme => ({
@@ -14,7 +13,6 @@ const styles = theme => ({
     }
   },
   heading: {
-    color: "grey",
     paddingTop: "4rem",
     textAlign: "center",
     width: "100%"
@@ -22,6 +20,19 @@ const styles = theme => ({
   textField: {
     width: "72%",
     maxWidth: 600
+  },
+  input: {
+    // color: "white"
+  },
+  button: {
+    color: "white",
+    fontSize: "1.54rem",
+    marginTop: "0.33rem",
+    marginLeft: "0.2rem",
+    backgroundColor: "#FF7417",
+    "&:hover": {
+      background: "#ffa830"
+    }
   }
 });
 
@@ -36,7 +47,12 @@ class SearchBox extends Component {
 
     return (
       <Fragment>
-        <Typography className={classes.heading} variant="h3" gutterBottom>
+        <Typography
+          color="primary"
+          className={classes.heading}
+          variant="h3"
+          gutterBottom
+        >
           Book Finder
         </Typography>
         <form
@@ -52,9 +68,20 @@ class SearchBox extends Component {
             className={classes.textField}
             margin="normal"
             value={query}
+            variant="outlined"
             onChange={handleSearchInput}
+            InputProps={{
+              className: classes.input
+            }}
           />
-          <Button type="submit">Search</Button>
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="primary"
+            type="submit"
+          >
+            Search
+          </Button>
         </form>
       </Fragment>
     );

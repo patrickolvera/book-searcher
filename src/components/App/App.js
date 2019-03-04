@@ -35,13 +35,15 @@ class App extends Component {
     });
   };
   handleSearchSubmit = async event => {
-    event.preventDefault();
-    this.setState({ loading: true, loadingBar: true });
-    const books = await getBooks(this.state.query);
-    this.setState({ books, loading: false });
-    setTimeout(() => {
-      this.setState({ loadingBar: false });
-    }, 500);
+    if (this.state.query) {
+      event.preventDefault();
+      this.setState({ loading: true, loadingBar: true });
+      const books = await getBooks(this.state.query);
+      this.setState({ books, loading: false });
+      setTimeout(() => {
+        this.setState({ loadingBar: false });
+      }, 500);
+    }
   };
 
   render() {
