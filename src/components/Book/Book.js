@@ -34,21 +34,21 @@ const styles = theme => ({
     height: bookSize.height,
     width: bookSize.width,
     [theme.breakpoints.up("xs")]: {
-      width: "44%",
+      width: "36%",
       height: "70%"
     }
   },
   content: {
     float: "right",
-    width: "40%",
+    width: "50%",
     height: 320
   },
   h5: {
-    fontSize: "1.2rem",
+    fontSize: "1.4rem",
     maxHeight: 210,
     overflow: "hidden",
     [theme.breakpoints.up("xs")]: {
-      fontSize: "0.8rem"
+      fontSize: "1rem"
     }
   },
   subHeadings: {
