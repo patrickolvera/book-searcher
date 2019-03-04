@@ -5,19 +5,17 @@ import { withStyles, LinearProgress } from "@material-ui/core";
 const styles = {
   root: {
     flexGrow: 1
-  },
-  hide: {
-    display: "none"
   }
 };
+
 class LoadingBar extends Component {
   state = {
     completed: 0
   };
+
   componentDidMount() {
     this.timer = setInterval(this.progress, 100);
   }
-
   componentWillUnmount() {
     clearInterval(this.timer);
   }

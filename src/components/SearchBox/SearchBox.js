@@ -8,7 +8,10 @@ const styles = theme => ({
     display: "flex",
     flexWrap: "wrap",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    [theme.breakpoints.up("sm")]: {
+      marginBottom: "4rem"
+    }
   },
   heading: {
     color: "grey",
@@ -17,7 +20,8 @@ const styles = theme => ({
     width: "100%"
   },
   textField: {
-    width: "50%"
+    width: "72%",
+    maxWidth: 600
   }
 });
 
@@ -33,7 +37,7 @@ class SearchBox extends Component {
     return (
       <Fragment>
         <Typography className={classes.heading} variant="h3" gutterBottom>
-          Book Searcher
+          Book Finder
         </Typography>
         <form
           className={classes.container}

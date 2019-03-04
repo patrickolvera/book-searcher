@@ -1,22 +1,24 @@
 /***********************************************
  * TODO:
  * -Results:
- *   -create book components to be rendered
- *   -put books on the page
  *   -Link to more information
  *    -perform volume request or redirect (https://developers.google.com/books/docs/v1/using#RetrievingVolume)
  * -Bonus:
  *   -handle errors with API requests
  *   -display error message to user when submiting non valid query
  *   -write tests for components
+ *   -implement a dark theme
+ *   -implement infinite scroll for books
  *   -use Redux
  *   -write tests for Redux
  *   -add animations to books
+ *   -add appropriate meta tags and custom favicon
  ************************************************/
 
 import React, { Component } from "react";
 import SearchBox from "../SearchBox";
 import LoadingBar from "../LoadingBar";
+import Results from "../Results";
 import getBooks from "../../API";
 
 class App extends Component {
@@ -26,6 +28,7 @@ class App extends Component {
     loading: false,
     loadingBar: false
   };
+
   handleSearchInput = event => {
     this.setState({
       query: event.target.value
@@ -40,8 +43,9 @@ class App extends Component {
       this.setState({ loadingBar: false });
     }, 500);
   };
+
   render() {
-    const { query, loading, loadingBar } = this.state;
+    const { query, books, loading, loadingBar } = this.state;
 
     return (
       <div>
@@ -51,6 +55,7 @@ class App extends Component {
           handleSearchInput={this.handleSearchInput}
           handleSearchSubmit={this.handleSearchSubmit}
         />
+        <Results books={books} />
       </div>
     );
   }
